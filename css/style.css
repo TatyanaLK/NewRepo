@@ -1,0 +1,12 @@
+.single-goods {
+    width: 300px;
+    height: 600px;
+    border: 1px solid black;
+    margin: 15px;
+    float: left;
+    text-align: center;
+}
+.single-goods button {
+    display: block;
+    margin: 20px auto;
+}
