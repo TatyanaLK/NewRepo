@@ -1,12 +1,388 @@
-.single-goods {
-    width: 300px;
-    height: 600px;
-    border: 1px solid black;
-    margin: 15px;
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box; /**/
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: Times New Roman, sans-serif, Verdana, Tahoma; /**/
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/**/
+
+.cart {
+    width: 250px;
+    height: 480px;
+    border: 3px solid cadetblue;
+    margin: 20px;
     float: left;
     text-align: center;
+    padding: 10px;
 }
-.single-goods button {
+
+.cart .name {
+    font-size: 1rem;
+    font-weight: bold;
+    height: 80px;
+    margin-bottom: 10px;
+    //color: cadetblue;
+}
+
+.cart .cost {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: crimson;
+}
+
+.cart .pic {
+    max-height: 220px;
+}
+
+.cart .add-to-cart {
+    font-size: 1rem;
+    background: cadetblue;
+    color: white;
+    width: 100%;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.cart .add-to-cart:hover {
+    background: #21b4db;
+}
+
+.cart .add-to-cart:active {
+    background: #f41448;
+}
+
+.info {
+    height: 60px;
+    color: cadetblue;
+}
+
+.goods-out::after {
+    content: "";
     display: block;
-    margin: 20px auto;
+    clear: both;
+}
+
+.main-cart {
+    margin: 20px 30px 30px 30px;;
+}
+.main-cart img {
+    height: 50px;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: cadetblue;
+    color: white;
+    position: fixed;
+    top: 0;
+}
+
+.wrap-top {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.site-title {
+    font-size: 2rem;
+    margin-top: 15px;
+}
+
+.cont {
+    float: right;
+}
+
+.cont h4 {
+    display : inline;
+    padding-left: 15px;
+}
+
+ul li {
+	display : inline;
+}
+
+ul {
+    width: 100%;
+    text-align: right;
+}
+
+.home {
+    padding: 50px;
+}
+
+.mini-cart a, .home {
+    color: white;
+}
+
+.wrap-bottom {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.left-side {
+    height: calc(100%-160px);
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 20px; 
+    margin-top: 80px;
+}
+
+.right-side {
+    margin-left: 200px;
+    margin-top: 80px;
+    padding: 0px 10px;
+    border-left: 3px solid cadetblue;
+}
+
+.main {
+    background-color: white;
+    margin-top: 80px;
+}
+
+.footer {
+    width: 100%;
+    height: 60px;
+    background-color: #252856;
+    color: #fff;
+}
+
+.cat {
+    font-size: 15px;
+    padding: 5px 5px 5px;
+}
+
+.selected-category {
+    height: 45px;
+    font-size: 1.2rem;  
+    color: cadetblue;
+    border-bottom: 3px solid cadetblue;
+    padding: 10px;
+}
+
+.min-title {
+    height: 45px;
+    width: 98%;
+    font-size: 1.2rem;  
+    color: cadetblue;
+    border-bottom: 3px solid cadetblue;
+    margin-top: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 30px;
+    padding-top: 5px;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 30px;
+    padding-top: 5px;
+}
+
+h3 {
+    color: cadetblue;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.card-type, .card-brand, .card-volume,
+.card-weight, .card-country, .card-price {
+     margin-top: 5px;
+}
+
+.card-price {
+    color: crimson;
+}
+
+.card-name {
+    font-size: 1.2rem;
+    color: crimson;
+    margin-top: 2px;
+}
+
+.card-img {
+    margin-top: 15px;
+    margin-left: 40px;
+}
+.card-pic {
+    height: 200px;
+    padding:5px;
+    border: 1px solid cadetblue;
+    transition: 1s; /* Время эффекта */
+}
+
+.card-pic:hover {
+    transform: scale(1.5); /* Увеличиваем масштаб */
+}
+
+.card-to-cart {
+    font-size: 1rem;
+    background: cadetblue;
+    color: white;
+    width: 300px;
+    margin: 20px 20px 20px 30px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+.card-to-cart:hover {
+    background: #21b4db;
+}
+.card-to-cart:active {
+    background: #f41448;
+}
+
+.descript {
+    width: 98%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-top: 1px solid cadetblue;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.del-goods, .plus-goods, .minus-goods {
+    font-size: 1rem;
+    background: cadetblue;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    
+}
+.del-goods:hover, .plus-goods:hover, .minus-goods:hover {
+    background: #21b4db;
+}
+.del-goods:active, .plus-goods:active, .minus-goods:active {
+    background: #f41448;
+}
+
+table, th, td {
+    border: 1px solid cadetblue;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+th, td {
+    padding: 5px;
+    vertical-align: middle;
+}
+th {
+  background-color: cadetblue;
+  color: white;
+}
+.rub {
+    text-align: right;
+}
+.kk {
+    text-align: center;
+}
+
+.myForm {
+    border: 1px solid cadetblue; 
+    width: 400px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.lbl {
+    display: block;
+	float: left;
+	width: 130px;
+	height: 10px;
+    padding-left: 50px;		
+}
+
+.zagZak {
+    width: 100%;
+    height: 25px;
+    background-color: cadetblue;
+    color: white;
+    font-weight: bold;
+    padding-top: 3px;
+}
+
+.send-email {
+    width: 220px;
+    height: 35px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 20px;  
+    background-color: cadetblue;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+.send-email:hover {
+    background: #21b4db;
+}
+.send-email:active {
+    background: #f41448;
 }
