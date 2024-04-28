@@ -23,7 +23,7 @@ $message .= 'Всего: '.$sum;
 
 print_r($message);
 
-$to = 'aek1@bk.ru'.',';
+$to = 'tatyana_k.l@mail.ru'.',';
 $to .= $_POST['email'];
 $spectext = '<!DOCTYPE HTML><html><head><title>Заказ</title></head><body>';
 $headers = 'MIME-Version: 1.0'."\r\n";
